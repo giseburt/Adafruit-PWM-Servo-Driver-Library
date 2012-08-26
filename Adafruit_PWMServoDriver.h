@@ -29,7 +29,8 @@
 #define PCA9685_SUBADR2 0x3
 #define PCA9685_SUBADR3 0x4
 
-#define PCA9685_MODE1 0x0
+#define PCA9685_MODE1 (uint8_t)0x0
+#define PCA9685_AUTOINCREMENT 1<<5
 #define PCA9685_PRESCALE 0xFE
 
 #define LED0_ON_L 0x6
@@ -54,8 +55,8 @@ class Adafruit_PWMServoDriver {
  private:
   uint8_t _i2caddr;
 
-  uint8_t read8(uint8_t addr);
-  void write8(uint8_t addr, uint8_t d);
+  // uint8_t read8(uint8_t addr);
+  // void write8(uint8_t addr, uint8_t d);
 };
 
 #endif
